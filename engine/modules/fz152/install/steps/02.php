@@ -14,7 +14,7 @@
 return [
 
 	// Заголовок щага
-	'header' => 'Добавление стилей модуля',
+	'header' => 'Добавление скриптов модуля',
 
 	// Текст с описанием шага шага
 	'text' => 'В шаблоне <b>%THEME%/main.tpl</b>',
@@ -23,13 +23,13 @@ return [
 	// 'paste' => 'someCode to paste',
 
 	// Код, который необходимо найти
-	'find' => '</head>',
+	'find' => '{AJAX}',
 
 	// Код, который необходимо вставить перед найденным
-	'addBefore' => '<link rel="stylesheet" href="{THEME}/fz152/css/styles.css">',
+	// 'addBefore' => '',
 
 	// Код, который необходимо вставить после найденного
-	// 'addAfter' => 'someCode to add after',
+	 'addAfter' => '<script src="{THEME}/fz152/js/scripts.js"></script>',
 
 
 	// Код, которым необходимо заменить найденное
