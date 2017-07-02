@@ -32,6 +32,9 @@ function getVal($data = [], $keyString = '', $fallback = false) {
 		foreach ($keys as $key) {
 			$data = findKey($data, $key);
 		}
+		if(is_array($data)) {
+			$data = implode("\n", $data);
+		}
 
 		return $data;
 	} else {
@@ -45,15 +48,31 @@ function getVal($data = [], $keyString = '', $fallback = false) {
 function saveConfig($module_config = []) {
 
 	$handler = fopen(ENGINE_DIR . '/data/fz152.php', "w");
-	fwrite($handler, "<?php \n/**\n * Конфиг модуля DLE-152fz\n * @var array\n */\n\n\$return [\n");
+	fwrite($handler, "<?php \n/**\n * Конфиг модуля DLE-152fz\n * @var array\n */\n\nreturn [\n");
 	foreach ($module_config as $name => $value) {
 		if (is_numeric($value)) {
 			fwrite($handler, "\t'{$name}' => {$value},\n");
 		} else {
-			fwrite($handler, "\t'{$name}' => '{$value}',\n");
+			if (in_array($name, ['dataTypes', 'dataTargets', 'dataActions'])) {
+				$value = explode("\n", $value);
+				fwrite($handler, "\t'{$name}' => [ ");
+				foreach ($value as $val) {
+					$val = trim($val);
+					if($val !== '') {
+						fwrite($handler, "'{$val}', ");
+					}
+				}
+				fwrite($handler, "],\n");
+			} else {
+				fwrite($handler, "\t'{$name}' => '{$value}',\n");
+			}
 		}
 	}
 	fwrite($handler, "];");
 	fclose($handler);
+}
+
+function removeConfig() {
+	unlink(ENGINE_DIR . '/data/fz152.php');
 }
 
