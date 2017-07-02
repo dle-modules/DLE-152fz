@@ -1,9 +1,9 @@
 <?php
 /*
- * DLE-Starter — "Hello Word" модуль для DLE
+ * DLE-152fz — соблюдаем ФЗ 152
  *
  * @author     ПафНутиЙ <pafnuty10@gmail.com>
- * @link       https://git.io/vPLpe
+ * @link       https://git.io/vQ8DG
  */
 
 if (!defined('DATALIFEENGINE')) {

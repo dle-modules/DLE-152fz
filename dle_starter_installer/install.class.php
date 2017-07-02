@@ -3,7 +3,7 @@
  * DLE-StarterKit
  *
  * @author     ПафНутиЙ <pafnuty10@gmail.com>
- * @link       https://git.io/vPLpe
+ * @link       https://git.io/vQ8DG
  */
 
 

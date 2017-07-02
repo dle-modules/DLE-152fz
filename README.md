@@ -1,6 +1,6 @@
 # DLE-152fz
 
-![DLE ФЗ 152](https://raw.githubusercontent.com/dle-modules/DLE-StarterKit/master/engine/skins/images/ая152.png "DLE ФЗ 152")
+![DLE ФЗ 152](https://raw.githubusercontent.com/dle-modules/DLE-152fz/master/engine/skins/images/fz152.png "DLE ФЗ 152")
 
 DLE 152 ФЗ - Модуль для вывода текста с соглашением на обработку персональных данных в соответствии с Федеральным Законом №152.
 
